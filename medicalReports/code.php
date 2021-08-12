@@ -6,6 +6,7 @@ if (!$session->is_logged_in()) {
 }
 
 $user = User::find_by_id($session->user_id);
+$patient = Patient::find_by_id($_GET['id']);
 
 if  (isset($_POST['submit_pilg_btn'])){//(is_post()){
 
@@ -42,7 +43,7 @@ if  (isset($_POST['submit_pilg_btn'])){//(is_post()){
 
     $medical                = new MedicalReports();
     $medical->sync          = "off";
-    $medical->patient_id    = $name;
+    $medical->patient_id    = $patient->id;
     $medical->result        = json_encode($pilgrimage);
     $medical->doctor        = $user->full_name();
     $medical->date          = strftime("%Y-%m-%d %H:%M:%S", time());
@@ -81,7 +82,7 @@ if (isset($_POST['submit_licence_btn'])){
 
     $medical                = new MedicalReports();
     $medical->sync          = "off";
-    $medical->patient_id    = $name;
+    $medical->patient_id    = $patient->id;
     $medical->result        = json_encode($pilgrimage);
     $medical->doctor        = $user->full_name();
     $medical->date          = strftime("%Y-%m-%d %H:%M:%S", time());
@@ -130,7 +131,7 @@ if (isset($_POST['submit_admis_btn'])){
 
     $medical                = new MedicalReports();
     $medical->sync          = "off";
-    $medical->patient_id    = $name;
+    $medical->patient_id    = $patient->id;
     $medical->result        = json_encode($reports);
     $medical->doctor        = $user->full_name();
     $medical->date          = strftime("%Y-%m-%d %H:%M:%S", time());
@@ -179,7 +180,7 @@ $name                   = $_POST['patient_name'];
 
     $medical                = new MedicalReports();
     $medical->sync          = "off";
-    $medical->patient_id    = $name;
+    $medical->patient_id    = $patient->id;
     $medical->result        = json_encode($emp);
     $medical->doctor        = $user->full_name();
     $medical->date          = strftime("%Y-%m-%d %H:%M:%S", time());
@@ -223,7 +224,7 @@ if(isset($_POST['nysc_submit_btn'])){
 
     $medical                = new MedicalReports();
     $medical->sync          = "off";
-    $medical->patient_id    = $name;
+    $medical->patient_id    = $patient->id;
     $medical->result        = json_encode($nysc);
     $medical->doctor        = $user->full_name();
     $medical->date          = strftime("%Y-%m-%d %H:%M:%S", time());
@@ -273,7 +274,7 @@ if(isset($_POST['travel_submit_btn'])){
 
     $medical                = new MedicalReports();
     $medical->sync          = "off";
-    $medical->patient_id    = $name;
+    $medical->patient_id    = $patient->id;
     $medical->result        = json_encode($travreport);
     $medical->doctor        = $user->full_name();
     $medical->date          = strftime("%Y-%m-%d %H:%M:%S", time());
@@ -318,7 +319,7 @@ if (isset($_POST['stu_submit_btn'])){
 
     $medical                = new MedicalReports();
     $medical->sync          = "off";
-    $medical->patient_id    = $name;
+    $medical->patient_id    = $patient->id;
     $medical->result        = json_encode($nysc);
     $medical->doctor        = $user->full_name();
     $medical->date          = strftime("%Y-%m-%d %H:%M:%S", time());
