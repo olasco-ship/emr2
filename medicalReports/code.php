@@ -51,11 +51,11 @@ if  (isset($_POST['submit_pilg_btn'])){//(is_post()){
 
 
 
-        //redirect_to("printmedReports.php?id=$medical->id");
+        redirect_to("printpilgrimageReports.php?id=$medical->id");
 
     //$session->message("Successfully Updated");
 
-   redirect_to("pilgrimage.php");
+   //redirect_to("pilgrimage.php");
 
 
 }
@@ -89,11 +89,11 @@ if (isset($_POST['submit_licence_btn'])){
     $medical->save();
 
 
-       redirect_to("printmedReports.php?id=$medical->id");
+       redirect_to("printlicenceReports.php?id=$medical->id");
 
    // $session->message("Successfully Updated");
 
-   redirect_to("licence.php");
+  // redirect_to("licence.php");
 
 }
 
@@ -137,7 +137,7 @@ if (isset($_POST['submit_admis_btn'])){
     $medical->date          = strftime("%Y-%m-%d %H:%M:%S", time());
     $medical->save();
 
- redirect_to("printmedReports.php?id=<?php echo $patient->id ?>");
+ redirect_to("printmedReports.php?id=$medical->id ?>");
         //$session->message("Successfully Updated");
 
   //redirect_to("admission.php");
@@ -186,7 +186,7 @@ $name                   = $_POST['patient_name'];
     $medical->date          = strftime("%Y-%m-%d %H:%M:%S", time());
     $medical->save();
 
-  redirect_to("printmedReports.php?id=<?php echo $patient->id ?>");
+  redirect_to("printemployReports.php?id=$medical->id ?>");
         // $session->message("Successfully Updated");
 
   // redirect_to("employment.php");
@@ -232,9 +232,9 @@ if(isset($_POST['nysc_submit_btn'])){
 
     // $session->message("Successfully Updated");
 
-   // redirect_to("printmedReports.php?id=$medical->id");
+    redirect_to("printnyscReports.php?id=$medical->id");
 
-    redirect_to("nysc.php");
+   // redirect_to("nysc.php");
 
 }
 
@@ -265,7 +265,8 @@ if(isset($_POST['travel_submit_btn'])){
     $travreport->micro                  = $micro;
     $travreport->urinary_protein        = $urinary_protein;
     $travreport->urinary_glucose        = $urinary_glucose;
-    $travreport->preg_test               = $preg_test;
+    $travreport->visual               = $visual;
+    $travreport->vdrl               = $vdrl;
     $travreport->hiv                    = $hiv;
     $travreport->hepatitis_bsa         = $hepatitis_bsa;
     $travreport->hcv                   = $hcv;
@@ -280,10 +281,10 @@ if(isset($_POST['travel_submit_btn'])){
     $medical->date          = strftime("%Y-%m-%d %H:%M:%S", time());
     $medical->save();
 
- //redirect_to("print_medReport.php?id=$medical->id");
+ redirect_to("printtravelReports.php?id=$medical->id");
     // $session->message("Successfully Updated");
 
-   redirect_to("travelling.php");
+   //redirect_to("travelling.php");
 
 }
 
@@ -325,8 +326,8 @@ if (isset($_POST['stu_submit_btn'])){
     $medical->date          = strftime("%Y-%m-%d %H:%M:%S", time());
     $medical->save();
 
-    //redirect_to("print_medReport.php?id=$medical->id");
-        redirect_to("studies.php");
+    redirect_to("printfurtherReports.php?id=$medical->id");
+       // redirect_to("studies.php");
 }
 
 
