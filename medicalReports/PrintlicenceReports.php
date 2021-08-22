@@ -39,7 +39,7 @@ require('../layout/header2.php');
                             <div class="col-lg-12 col-md-12 col-sm-12">
 
                                 <div id="body">
-                                    <?php $patient = Patient::find_by_id($medical->patient_id);
+                                    <?php $patient = Patient::find_by_id($medical->id);
  ?>
                                     <center><h4>TO WHOM IT MAY CONCERN</h4></center>
                                     <div class="row">
@@ -48,11 +48,11 @@ require('../layout/header2.php');
                                             <input type="text" name="patient_name" class="form-control" value="<?php echo $patient->title. " ".  $patient->first_name . " " . "$patient->last_name" ?>">
                                         </div>
                                     </div>
-                                    <center><h3><u>MEDICAL CERTIFICATE OF FITNESS FOR ADMISSION</u></h3></center>
+                                    <center><h3><u>MEDICAL CERTIFICATE OF FITNESS FOR DRIVER'S LICENCE</u></h3></center>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <p>This is to certify that I have examined the above candidate and found him/her to be physically and mentally
-                                                fit for admission.</p>
+                                                fit.</p>
                                         </div>
                                     </div>
 
@@ -116,112 +116,15 @@ require('../layout/header2.php');
                                             </div>
                                         </div>
 
-                                  <!--  <div class="row form-group">
-                <div class="offset-1 col-sm-0">
-                    <label>PCV</label>
-                </div>
-
-                <div class="col-md-2">
-                    <input type="text" name="pcv" class="form-control" id="pcv" value="<?php echo $decoded->pcv ?>">
-                </div>
-
-                <div class="lef">
-                    <label>Blood Group</label>
-                </div>
-
-                <div class="col-md-3">
-                    <input type="text" name="bg" class="form-control" id="bg" value="<?php echo $decoded->bg ?>">
-                </div>
-
-                <div class="lef">
-                    <label>Genotype</label>
-                </div>
-
-                <div class="col-md-3">
-                    <input type="text" name="genotype" class="form-control" id="genotype" value="<?php echo $decoded->genotype ?>">
-                </div>
-            </div>-->
-
-
-                                    <!--<div class="row form-group">
-                                        <div class="offset-1  col-md-2">
-                                            <label>Blood Group</label>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <input type="text" name="bg" class="form-control" id="bg" value="<?php echo $decoded->bg ?>">
-                                        </div>
-
-                                        <div class="offset-1 col-md-1">
-                                            <label>Genotype</label>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <input type="text" name="genotype" class="form-control" id="genotype" value="<?php echo $decoded->genotype ?>">
-                                        </div>
-                                    </div>-->
-
-                                    <div class="row">
-                                        <div class="offset-1 col-md-5">
-                                            <label>Microbiology & Parasitology Organisms:</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <textarea name="micro_para" class="form-control"><?php echo $decoded->micro ?></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="offset-1 col-md-11">
-                                            <label>Chemical Pathological Investigation:</label>
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="offset-1 col-md-2">
-                                            <label>Urinary Protein</label>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <input type="text" name="urinary_protein" class="form-control" id="urinary_protein" value="<?php echo $decoded->urinary_protein ?>">
-                                        </div>
-
-                                        <div class="offset-1 col-md-1">
-                                            <label>Urinary Glucose</label>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <input type="text" name="urinary_glucose" class="form-control" id="urinary_glucose" value="<?php echo $decoded->urinary_glucose ?>">
-                                        </div>
-                                    </div>
-                  <div class="row">
+                                         <div class="row">
                 <div class="offset-1 col-md-4">
-                    <label>Pregnancy Test:</label>
+                    <label>Visual Acuity:</label>
                 </div>
-                <div class="col-md-7 mb-4">
-                    <input type="text" name="preg_test" class="form-control" value="<?php echo $decoded->preg_test ?>">
+                <div class="col-md-7">
+                    <input type="text" name="visual" class="form-control" value="<?php echo $decoded->visual ?>" required/>
                 </div>
             </div>
 
-
-                                    <div class="row">
-                                        <div class="offset-1 col-md-4">
-                                            <label>HIV Test:</label>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <textarea name="hiv" class="form-control"><?php echo $decoded->hiv ?></textarea>
-                                        </div>
-                                    </div>
-
-                                    <br>
-
-                                    <div class="row">
-                                        <div class="offset-1 col-md-5">
-                                            <label>Hepatitis B Surface Antigen:</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <textarea name="hepatitis_b" class="form-control"><?php echo $decoded->hepatitis_bsa  ?></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="row">
                <!-- <div class="offset-1 col-md-4">
                     <label>HCV:</label>
                 </div>

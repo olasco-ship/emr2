@@ -48,11 +48,11 @@ require('../layout/header2.php');
                                             <input type="text" name="patient_name" class="form-control" value="<?php echo $patient->title. " ".  $patient->first_name . " " . "$patient->last_name" ?>">
                                         </div>
                                     </div>
-                                    <center><h3><u>MEDICAL CERTIFICATE OF FITNESS FOR ADMISSION</u></h3></center>
+                                    <center><h3><u>MEDICAL CERTIFICATE OF FITNESS FOR EMPLOYMENT </u></h3></center>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <p>This is to certify that I have examined the above candidate and found him/her to be physically and mentally
-                                                fit for admission.</p>
+                                                fit for the employment.</p>
                                         </div>
                                     </div>
 
@@ -82,40 +82,31 @@ require('../layout/header2.php');
                                     </div>
 
                                     <div class="row form-group">
-                                            <div class="offset-1 col-md-1">
-                                                <label>PCV</label>
-                                            </div>
+                <div class="offset-1 col-sm-0">
+                    <label>PCV</label>
+                </div>
 
-                                            <div class="col-md-4">
-                                                <input type="text" name="pcv" class="form-control" id="pcv" value="<?php echo $decoded->pcv ?>">
-                                            </div>
+                <div class="col-md-2">
+                    <input type="text" name="pcv" class="form-control" id="pcv" value="<?php echo $decoded->pcv ?>">
+                </div>
 
-                                            <div class="offset-1 col-md-1">
-                                                <label>WBC</label>
-                                            </div>
+                <div class="lef">
+                    <label>Blood Group</label>
+                </div>
 
-                                            <div class="col-md-4">
-                                                <input type="text" name="wbc" class="form-control" id="wbc" value="<?php echo $decoded->wbc ?>">
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="offset-1  col-md-2">
-                                                <label>Blood Group</label>
-                                            </div>
+                <div class="col-md-3">
+                    <input type="text" name="bg" class="form-control" id="bg" value="<?php echo $decoded->bg ?>">
+                </div>
 
-                                            <div class="col-md-3">
-                                                <input type="text" name="bg" class="form-control" id="bg" value="<?php echo $decoded->bg ?>">
-                                            </div>
+                <div class="lef">
+                    <label>Genotype</label>
+                </div>
 
-                                            <div class="offset-1 col-md-1">
-                                                <label>Genotype</label>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <input type="text" name="genotype" class="form-control" id="genotype" value="<?php echo $decoded->genotype ?>">
-                                            </div>
-                                        </div>
-
+                <div class="col-md-3">
+                    <input type="text" name="genotype" class="form-control" id="genotype" value="<?php echo $decoded->genotype ?>">
+                </div>
+            </div>
+                                        
                                   <!--  <div class="row form-group">
                 <div class="offset-1 col-sm-0">
                     <label>PCV</label>
@@ -222,6 +213,23 @@ require('../layout/header2.php');
                                         </div>
                                     </div>
                                     <div class="row">
+                <div class="offset-1 col-md-4">
+                    <label>Heptitis C:</label>
+                </div>
+                <div class="col-md-7 mb-4">
+                    <input type="text" name="hepatitis" class="form-control" value="<?php echo $decoded->hepatitis   ?>">
+                </div>
+            </div>
+
+                 <div class="row">
+                <div class="offset-1 col-md-4">
+                    <label>Sputum AFB:</label>
+                </div>
+                <div class="col-md-7 mb-4">
+                    <input type="text" name="sputum" class="form-control" value="<?php echo $decoded->sputum  ?>">
+                </div>
+            </div>
+
                <!-- <div class="offset-1 col-md-4">
                     <label>HCV:</label>
                 </div>

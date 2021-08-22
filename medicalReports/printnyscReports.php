@@ -11,7 +11,7 @@ $medical = MedicalReports::find_by_id($_GET['id']);
 
 
 
-require('../layout/header.php');
+require('../layout/header2.php');
 ?>
 
 
@@ -39,12 +39,13 @@ require('../layout/header.php');
                             <div class="col-lg-12 col-md-12 col-sm-12">
 
                                 <div id="body">
-
+                                    <?php $patient = Patient::find_by_id($medical->patient_id);
+ ?>
                                     <center><h4>TO WHOM IT MAY CONCERN</h4></center>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label>Mr./Mrs./Miss</label>
-                                            <input type="text" name="patient_name" class="form-control" value="">
+                                            <input type="text" name="patient_name" class="form-control" value="<?php echo $patient->title. " ".  $patient->first_name . " " . "$patient->last_name" ?>">
                                         </div>
                                     </div>
                                     <center><h3><u>MEDICAL CERTIFICATE OF FITNESS FOR NYSC</u></h3></center>
@@ -58,7 +59,7 @@ require('../layout/header.php');
                                     <?php
                                     $decoded = json_decode($medical->result);
                                     ?>
-                                    <div class="row">
+                                    <!--<div class="row">
                                         <div class="offset-1 col-md-8">
                                             <label>His/Her Chest X-Ray No:</label>
                                         </div>
@@ -73,31 +74,40 @@ require('../layout/header.php');
                                         <div class="col-md-3">
                                             <p>shows no abnormality.</p>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="row">
                                         <div class="offset-1 col-md-11">
                                             <label>Haematological Investigation:</label>
                                         </div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="offset-1 col-md-1">
-                                            <label>PCV</label>
-                                        </div>
+                <div class="offset-1 col-sm-0">
+                    <label>PCV</label>
+                </div>
 
-                                        <div class="col-md-4">
-                                            <input type="text" name="pcv" class="form-control" id="pcv" value="<?php echo $decoded->pcv ?>">
-                                        </div>
+                <div class="col-md-2">
+                    <input type="text" name="pcv" class="form-control" id="pcv" value="<?php echo $decoded->pcv ?>">
+                </div>
 
-                                        <div class="offset-1 col-md-1">
-                                            <label>WBC</label>
-                                        </div>
+                <div class="lef">
+                    <label>Blood Group</label>
+                </div>
 
-                                        <div class="col-md-4">
-                                            <input type="text" name="wbc" class="form-control" id="wbc" value="<?php echo $decoded->wbc ?>">
-                                        </div>
-                                    </div>
+                <div class="col-md-3">
+                    <input type="text" name="bg" class="form-control" id="bg" value="<?php echo $decoded->bg ?>">
+                </div>
 
-                                    <div class="row form-group">
+                <div class="lef">
+                    <label>Genotype</label>
+                </div>
+
+                <div class="col-md-3">
+                    <input type="text" name="genotype" class="form-control" id="genotype" value="<?php echo $decoded->genotype ?>">
+                </div>
+            </div>
+
+
+                                    <!--<div class="row form-group">
                                         <div class="offset-1  col-md-2">
                                             <label>Blood Group</label>
                                         </div>
@@ -113,7 +123,7 @@ require('../layout/header.php');
                                         <div class="col-md-4">
                                             <input type="text" name="genotype" class="form-control" id="genotype" value="<?php echo $decoded->genotype ?>">
                                         </div>
-                                    </div>
+                                    </div>-->
 
                                     <div class="row">
                                         <div class="offset-1 col-md-5">
@@ -146,6 +156,16 @@ require('../layout/header.php');
                                             <input type="text" name="urinary_glucose" class="form-control" id="urinary_glucose" value="<?php echo $decoded->urinary_glucose ?>">
                                         </div>
                                     </div>
+                  <div class="row">
+                <div class="offset-1 col-md-4">
+                    <label>Pregnancy Test:</label>
+                </div>
+                <div class="col-md-7 mb-4">
+                    <input type="text" name="preg_test" class="form-control" value="<?php echo $decoded->preg_test ?>">
+                </div>
+            </div>
+
+
                                     <div class="row">
                                         <div class="offset-1 col-md-4">
                                             <label>HIV Test:</label>
@@ -162,9 +182,17 @@ require('../layout/header.php');
                                             <label>Hepatitis B Surface Antigen:</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <textarea name="hepatitis_b" class="form-control"><?php echo $decoded->hepatitis ?></textarea>
+                                            <textarea name="hepatitis_b" class="form-control"><?php echo $decoded->hepatitis_bsa  ?></textarea>
                                         </div>
                                     </div>
+                                    <div class="row">
+                <div class="offset-1 col-md-4">
+                    <label>HCV:</label>
+                </div>
+                <div class="col-md-7 mb-4">
+                    <input type="text" name="hepatitis" class="form-control" value="<?php echo $decoded->hcv ?>">
+                </div>
+            </div>
 
                                     <div class="row">
                                         <div class="offset-1 col-md-1">
@@ -174,7 +202,7 @@ require('../layout/header.php');
                                             <input type="text" name="code_no" class="form-control" value="<?php echo $decoded->code ?>">
                                         </div>
 
-                                        <div class="offset-1 col-md-2">
+                                        <!--<div class="offset-1 col-md-2">
                                             <label>Pregnancy Test</label>
                                         </div>
                                         <div class="col-md-4">
@@ -183,7 +211,7 @@ require('../layout/header.php');
                                                 <option value="Positive">Positive</option>
                                                 <option value="Negative">Negative</option>
                                             </select>
-                                        </div>
+                                        </div>-->
                                     </div>
 
                                 </div>
@@ -192,7 +220,7 @@ require('../layout/header.php');
                                     <div class="col-md-12">
                                         <form class="form-inline">
                                             <input type="hidden" value="<?php echo $medical->id; ?>" id="billId" />
-                                            <button type="button" id="printBill" class="btn btn-lg btn-success" data-loading-text="Searching...">Print Bill
+                                            <button type="button" id="printBill" class="btn btn-lg btn-success" data-loading-text="Searching...">Print Report
                                             </button>
                                             <!--<a href="print_preview.php?id=<?php /*echo $bill->id */?>" target="_blank" class="btn btn-outline-warning" role="button">
                                         Print Bill

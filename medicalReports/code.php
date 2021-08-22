@@ -136,10 +136,10 @@ if (isset($_POST['submit_admis_btn'])){
     $medical->date          = strftime("%Y-%m-%d %H:%M:%S", time());
     $medical->save();
 
-// redirect_to("printmedReports.php?id=$medical->id");
+ redirect_to("printmedReports.php?id=<?php echo $patient->id ?>");
         //$session->message("Successfully Updated");
 
-  redirect_to("admission.php");
+  //redirect_to("admission.php");
 }
 
 
@@ -185,10 +185,10 @@ $name                   = $_POST['patient_name'];
     $medical->date          = strftime("%Y-%m-%d %H:%M:%S", time());
     $medical->save();
 
-  // redirect_to("printmedReports.php?id=$medical->id");
+  redirect_to("printmedReports.php?id=<?php echo $patient->id ?>");
         // $session->message("Successfully Updated");
 
-   redirect_to("employment.php");
+  // redirect_to("employment.php");
 }
 
 if(isset($_POST['nysc_submit_btn'])){
