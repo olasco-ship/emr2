@@ -70,7 +70,7 @@ require('../layout/header.php');
                     ?>
 
     <div class="row clearfix">
-        <form method="post" action="code.php">
+        <form method="post" action="code.php?id=<?php echo $patient->id  ?>">
  
             <center><h4>TO WHOM IT MAY CONCERN</h4></center>
              <div class="row">
