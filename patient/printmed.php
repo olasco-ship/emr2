@@ -213,7 +213,7 @@ require('../layout/header.php');
                                                    <a href = "#"> <?php echo "Billed";
                                                 }?></a></td>
 
-                                                 <td><a href="demo.php?id=<?php echo $patient->id?>"><?php if($patient->id == $pat){ echo "Print"; ?></a>
+                                                 <td><a href="demo.php?id=<?php echo $patient->id?>"><?php if($patient->id != $pat){ echo "Print"; ?></a>
                                                  <?php }else{  ?>
 
                                                     <a href = "#"><?php echo "Print" ?></a>
