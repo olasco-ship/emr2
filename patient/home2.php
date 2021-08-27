@@ -263,19 +263,6 @@ require('../layout/header.php');
 
                     </div>
 
-                         <div class="body">
-                        <div class="row clearfix">
-
-                            <div class="col-md-3">
-                                <a href="printmed.php">
-                                    <div class="body bg-info text-light">
-                                        <h4><i class="icon-wallet"></i> </h4>
-                                        <span>Print Medical Reports</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
 
 
