@@ -16,42 +16,15 @@ class MedicalReports extends DatabaseObject
 
 
 
+ public static function find_patient_name(){
 
-public static function find_by_patient_id($patient_id){
-
-      $result_array = static::find_by_sql(" SELECT * FROM " .static::$table_name . " WHERE id = ''");
-
-         return !empty($result_array) ? array_shift($result_array) : FALSE;
-
-
-    }
-
-public static function find_withjoin($patient_id){
-
-      $result_array = static::find_by_sql(" SELECT * FROM medical_reports m left join patients p on m.patient_id = p.id WHERE id = ''");
-      var_dump($result_array);exit;
-
-         return !empty($result_array) ? array_shift($result_array) : FALSE;
-
-
-    }
-
-    public static function find_medical_id(){
-        return static::find_by_sql("SELECT * FROM " .static::$table_name . " ORDER BY id DESC");
-    }
-
-
-
-/* public static function find_by_sql(){
-
-        $sql = "SELECT * FROM medical_reports m left join patients p on p.id = m.patient_id LIMIT 1";
+        $sql = "SELECT * FROM medical_reports m left join patients p on p.id = m.patient_id  WHERE patient_id = $patient_name  LIMIT 1";
 
          $result_array = MedicalReports::find_by_sql($sql);
        //var_dump($result_array);exit;
 
          return !empty($result_array) ? array_shift($result_array) : FALSE;
-    }*/
-
+    }
 
 
     public static function create_table(){
