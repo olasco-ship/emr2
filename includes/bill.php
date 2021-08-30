@@ -83,6 +83,11 @@ class Bill extends DatabaseObject {
     public static function find_by_patient_id($patient_id){
         return static::find_by_sql("SELECT * FROM " .static::$table_name. " WHERE patient_id = $patient_id " );
     }
+    
+    public static function find_by_patient_medicalRep($patient_id){
+        return static::find_by_sql("SELECT * FROM " .static::$table_name. " WHERE patient_id = $patient_id AND revenues = 'Medical Report' " );
+    }
+
 
     public static function find_all_requested($dept){
         return static::find_by_sql("SELECT * FROM " .static::$table_name. " WHERE dept = '$dept' AND status = 'REQUESTED' ORDER BY date DESC " );
