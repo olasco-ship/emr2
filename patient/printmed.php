@@ -197,8 +197,9 @@ require('../layout/header.php');
                                        // if($patients->id == $medical->patient_id){ 
 
                                           foreach($patients as $patient) { 
+                                            $med = MedicalReports::find_by_patient_id($patient->id);
 
-                                          $pat = Bill::find_by_patient_id($patient->id);
+                                          $pat = Bill::find_by_patient_medicalRep($med->patient_id);
                                             ?>
                                             <tr>
                                                 <td><a href='view.php?id=<?php echo $patient->id ?>'><?php echo $patient->folder_number ?></a></td>
